@@ -6,6 +6,8 @@
 require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
+require("packs/get_instagram_posts")
+require("packs/main")
 require("channels")
 
 
