@@ -1,4 +1,5 @@
-getLastIstagramPosts('renderweekly', 18)
+$(document).on('ready turbolinks:load', function() {
+  getLastIstagramPosts('renderweekly', 24)
   .then(posts => {
     const targetNode = document.getElementById('instagram-posts')
     const imageNodes = document.createDocumentFragment()
@@ -16,34 +17,4 @@ getLastIstagramPosts('renderweekly', 18)
     targetNode.append(imageNodes)
   })
 .catch(err => console.error(err))
-
-
-
-// module Shared
-//   class TeamStatus
-//     def self.change_status(*attrs)
-//       new(*attrs).change_status
-//     end
-
-//     def initialize(record, params)
-//       @gt_teams_list = gt_teams_list
-//       @params = params
-//     end
-
-//     def change_status
-//       ap GtTeamsList.reflections.keys
-//       ap GtTeamsList.reflections
-//       ap GtTeamsList.reflect_on_all_associations
-//       ap gt_teams_list
-//       ap params.to_unsafe_h
-//       ap params[:all_team_ids]&.any?
-//       ap params[:players_attributes]&.empty?
-//       ap params[:teams_attributes]&.empty?
-//       ap 'lol'
-//     end
-
-//     private
-
-//     attr_reader :gt_teams_list, :params
-//   end
-// end
+})
