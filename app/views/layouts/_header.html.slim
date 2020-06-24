@@ -1,15 +1,12 @@
-.container-fluid
-  .header
-    .header__logo
-      = image_tag 'logo.png'
-    nav.navbar.navbar-expand-lg.navbar-light
-      button.navbar-toggler aria-controls="navbarSupportedContent" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbarSupportedContent" data-toggle="collapse" type="button"
-        span.navbar-toggler-icon
-      #navbarSupportedContent.collapse.navbar-collapse
-        ul.navbar-nav.mr-auto.navbar__list
-          li.nav-item.active
-            = link_to 'Home', root_path, class: 'nav-link'
-          li.nav-item
-            = link_to 'Instagram', 'http://www.instagram.com/printingweekly/', target: '_blank', rel: 'nofollow', class: 'nav-link', class_active: 'nav-link--active'
-          li.nav-item
-            = link_to 'Donate', 'https://donorbox.org/printingweekly/', target: '_blank', rel: 'nofollow', class: 'nav-link', class_active: 'nav-link--active'
+.navbar
+  .navbar__container.container
+    .navbar__logo = image_tag 'logo.png'
+    nav
+      button.navbar-toggler: span.burger-icon
+      ul.navbar-list
+        li.active
+          = link_to 'Home', root_path, class: 'nav-link'
+        li
+          = link_to 'Instagram', 'http://www.instagram.com/printingweekly/', target: '_blank', rel: 'nofollow', class: 'nav-link', class_active: 'nav-link--active'
+        li
+          = link_to 'Donate', 'https://donorbox.org/printingweekly/', target: '_blank', rel: 'nofollow', class: 'nav-link', class_active: 'nav-link--active'

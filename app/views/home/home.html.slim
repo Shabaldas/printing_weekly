@@ -1,13 +1,20 @@
-.home
-  .home__section-header
-  .container-fluid
-    = image_tag 'printer.png', class: 'home__printer-img'
-  .container
-    section.feed
-      h3
-        | THE FEED:
-      p
-        | A platform for 3d printing community.
-      / p
-        | Check out these fantastic submissions to our Monday Prompts:
-      #instagram-posts.row
+.header
+  .header__inner.container
+    div: h1 Print Weekly Challenge
+    div: ul.header__list
+      li Follow our weekly tasks/challenges
+      li
+        | Print out and take picture of the ready printed product/task and don't forget to tag&nbsp;
+        b #printweekly
+        |.
+      li Weekly top 20 will be published on our instagram page
+      li Follow the news and vote for the best product.
+.container
+  section.feed
+    h3
+      | THE FEED:
+    p
+      | A platform for 3d printing community.
+    / p
+      | Check out these fantastic submissions to our Monday Prompts:
+    #instagram-posts.instagram-posts
