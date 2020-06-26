@@ -23,6 +23,8 @@ set :puma_preload_app, true
 set :puma_worker_timeout, nil
 set :puma_init_active_record, true  # Change to false when not using ActiveRecord
 
+append :linked_files, "config/master.key"
+
 ## Defaults:
 # set :scm,           :git
 # set :branch,        :master
@@ -54,6 +56,16 @@ namespace :deploy do
         puts "WARNING: HEAD is not the same as origin/master"
         puts "Run `git push` to sync changes."
         exit
+      end
+    end
+  end
+
+  namespace :check do
+    before :linked_files, :set_master_key do
+      on roles(:app), in: :sequence, wait: 10 do
+        unless test("[ -f #{shared_path}/config/master.key ]")
+          upload! 'config/master.key', "#{shared_path}/config/master.key"
+        end
       end
     end
   end
