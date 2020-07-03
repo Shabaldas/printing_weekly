@@ -3,7 +3,7 @@ server '206.189.201.32', roles: [:web, :app, :db], primary: true
 
 set :repo_url,        'git@github.com:Shabaldas/printing_weekly.git'
 set :application,     'PrintingWeekly'
-set :user,            'root'
+set :user,            'deploy'
 set :puma_threads,    [4, 16]
 set :puma_workers,    0
 
