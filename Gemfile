@@ -28,8 +28,8 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'capistrano',         require: false
   gem 'capistrano-rvm',     require: false
-  gem 'capistrano-unicorn-nginx'
-  gem 'capistrano-unicorn'
+  # gem 'capistrano-unicorn-nginx'
+  # gem 'capistrano-unicorn'
   gem 'capistrano-rails',   require: false
   gem 'capistrano-bundler', require: false
   gem 'capistrano3-puma',   require: false

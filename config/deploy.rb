@@ -78,10 +78,10 @@ namespace :deploy do
     end
   end
 
-  after 'deploy:publishing', 'deploy:restart'
-  namespace :deploy do
-    task :restart do
-      invoke 'unicorn:restart'
+  desc 'Restart application'
+  task :restart do
+    on roles(:app), in: :sequence, wait: 5 do
+      invoke 'puma:restart'
     end
   end
 
