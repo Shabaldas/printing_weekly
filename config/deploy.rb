@@ -78,12 +78,12 @@ namespace :deploy do
     end
   end
 
-  desc 'Restart application'
-  task :restart do
-    on roles(:app), in: :sequence, wait: 5 do
-      invoke 'puma:restart'
-    end
-  end
+  # desc 'Restart application'
+  # task :restart do
+  #   on roles(:app), in: :sequence, wait: 5 do
+  #     invoke 'puma:restart'
+  #   end
+  # end
 
   before :starting,     :check_revision
   after  :finishing,    :compile_assets
@@ -94,3 +94,22 @@ end
 # ps aux | grep puma    # Get puma pid
 # kill -s SIGUSR2 pid   # Restart puma
 # kill -s SIGTERM pid   # Stop puma
+
+
+
+
+
+# server {
+#   listen 80 default_server;
+#   listen [::]:80 default_server ipv6only=on;
+
+#   server_name printingweekly.com;
+
+#   acces_log /var/log/nginx/myapp.access.log;
+#   error_log /var/log/nginx/myapp.error.log;
+
+#   passenger_enabled on;
+#   rails_env production;
+#   root /home/deploy/www/public;
+# }
+ 
