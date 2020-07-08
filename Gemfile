@@ -8,7 +8,7 @@ gem 'activeadmin'
 gem 'devise'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
 gem 'pg', '>= 0.18', '< 2.0'
-gem 'puma', '~> 4.1'
+# gem 'puma', '~> 4.1'
 gem 'sass-rails', '>= 6'
 gem 'webpacker', '~> 4.0'
 gem 'turbolinks', '~> 5'
@@ -30,13 +30,14 @@ group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'capistrano',         require: false
-  gem 'capistrano-rvm',     require: false
+  gem 'passenger'
+  # gem 'capistrano',         require: false
+  # gem 'capistrano-rvm',     require: false
   # gem 'capistrano-unicorn-nginx'
   # gem 'capistrano-unicorn'
-  gem 'capistrano-rails',   require: false
-  gem 'capistrano-bundler', require: false
-  gem 'capistrano3-puma',   require: false
+  # gem 'capistrano-rails',   require: false
+  # gem 'capistrano-bundler', require: false
+  # gem 'capistrano3-puma',   require: false
 end
 
 group :test do
