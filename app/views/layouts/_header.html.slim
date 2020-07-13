@@ -1,11 +1,13 @@
 .navbar
   .navbar__container.container
-    .navbar__logo = image_tag 'logo.png'
+    .navbar__logo
+      = link_to root_path, class: 'nav-link'
+        = image_tag 'logo.png'
     nav
       button.navbar-toggler: span.burger-icon
       ul.navbar-list
-        li.active
-          = link_to 'Home', root_path, class: 'nav-link'
+        / li.active
+        /   = link_to 'Home', root_path, class: 'nav-link'
         li
           = link_to 'Instagram', 'http://www.instagram.com/printingweekly/', target: '_blank', rel: 'nofollow', class: 'nav-link', class_active: 'nav-link--active'
         / li

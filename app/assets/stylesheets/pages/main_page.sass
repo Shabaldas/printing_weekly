@@ -9,9 +9,14 @@
   grid-template-columns: repeat(3, minmax(0, 1fr))
   grid-gap: 20px
   padding-top: 100px
+  @media ( max-width: 992px )
+    grid-template-columns: repeat(2, minmax(0, 1fr))
+    padding-top: 80px
+  @media ( max-width: 560px )
+    grid-template-columns: minmax(0, 1fr)
+    padding-top: 60px
 
   a.instagram-post
-    padding: 8px
     position: relative
     display: flex
     justify-content: center
@@ -22,7 +27,6 @@
       display: block
       padding-top: 100%
     img
-      padding: 8px
       width: 100%
       height: 100%
       position: absolute
@@ -31,7 +35,10 @@
 .header
   width: 100%
   padding-top: 100px
+  padding-left: 25px
+  padding-right: 25px
   background-color: #ddd
+  overflow: hidden
 
   &__inner
     display: grid
@@ -39,27 +46,48 @@
     grid-gap: 40px
     align-items: start
     padding: 100px 0 160px
+    position: relative
+
+    @media ( max-width: 992px )
+      grid-template-columns: minmax(0, 1fr)
 
     > div > *
-      max-width: 420px
+      max-width: 500px
+    
+    > *
+      z-index: 1
+
+  &__illustration
+    height: calc(100% + 100px)
+    position: absolute
+    top: -100px
+    left: -110px
+    z-index: 0
+
+    @media ( max-width: 560px )
+      left: 50%
+      transform: translateX(-50%)
 
   &__list
     padding: 0
     list-style: none
 
     li + li
-      margin-top: 10px
+      margin-top: 15px
     
     li
       display: flex
       align-items: flex-start
       font-size: 16px
-
+      line-height: 1.6
       
       &:before
         content: '///'
         margin-right: 10px
         font-weight: 800
+
+  .h1
+    margin: 0
 
 .home
   width: 100%
@@ -70,15 +98,17 @@
     height: auto
     margin-left: 10%
   section.feed
-  h3
+  .h3
     margin-top: 50px
     margin-bottom: 21px
   p
     margin: 12px 0
     font-size: 12px
 
-h1
+.h1
   font-family: Neue Machina
   font-size: 54px
   font-weight: 800
   line-height: 1.2
+  @media ( max-width: 992px )
+    font-size: 40px

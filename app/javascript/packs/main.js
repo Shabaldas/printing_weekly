@@ -1,4 +1,18 @@
 $(document).on('ready turbolinks:load', function() {
+  const $navbar = $('.navbar')
+  const $window = $(window)
+  let scrollTop = $window.scrollTop()
+  
+  $(window).on('scroll', function (event) {
+    let scrollTop = $window.scrollTop()
+    
+    if (scrollTop >= 40) $navbar.addClass('navbar--scrolled')
+    else $navbar.removeClass('navbar--scrolled')
+    console.log(scrollTop)
+  })
+  console.log(scrollTop)
+
+
   getLastIstagramPosts('renderweekly', 24)
   .then(posts => {
     const targetNode = document.getElementById('instagram-posts')

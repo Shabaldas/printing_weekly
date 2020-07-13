@@ -1,20 +1,22 @@
 .header
   .header__inner.container
-    div: h1 PrintingWeekly Challenge
+    = image_tag "line.svg", class: 'header__illustration'
+    h1.hidden Printing Weekly Challenge
+    div: h2.h1 Printing Weekly Challenge
     div: ul.header__list
       li Follow our weekly challenges
-      li
+      li: span
         | Print out and take picture of the ready printed product and don't forget to tag&nbsp;
         b #printingweekly
         |.
       li Weekly top 20 will be published on our instagram page
       li Follow the news and vote for the best product.
-.container
-  section.feed
-    h3
-      | THE FEED:
-    p
-      | A platform for 3d printing community.
-    / p
-      | Check out these fantastic submissions to our Monday Prompts:
-    #instagram-posts.instagram-posts
+
+section.feed.container
+  h3.h3
+    | THE FEED:
+  p
+    | A platform for 3d printing community.
+  / p
+    | Check out these fantastic submissions to our Monday Prompts:
+  #instagram-posts.instagram-posts
