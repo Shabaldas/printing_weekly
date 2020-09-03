@@ -15,6 +15,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
 gem 'slim-rails', '~> 3.1', '>= 3.1.1'
 gem 'bootsnap', '>= 1.4.2', require: false
+gem 'passenger'
 
 group :development, :test do
   gem 'awesome_print'
@@ -22,7 +23,7 @@ group :development, :test do
 end
 
 group :production do
-  gem 'passenger'
+  # gem 'passenger'
   gem 'pg', '>= 0.18', '< 2.0'
 end
 
