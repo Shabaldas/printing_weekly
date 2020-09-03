@@ -22,6 +22,7 @@ group :development, :test do
 end
 
 group :production do
+  gem 'passenger'
   gem 'pg', '>= 0.18', '< 2.0'
 end
 
