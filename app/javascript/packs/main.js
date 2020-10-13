@@ -13,7 +13,7 @@ $(document).on('ready turbolinks:load', function() {
   console.log(scrollTop)
 
 
-  getLastIstagramPosts('printingweekly', 2)
+  getLastIstagramPosts('printingweekly', 24)
   .then(posts => {
     const targetNode = document.getElementById('instagram-posts')
     const imageNodes = document.createDocumentFragment()
