@@ -6,10 +6,7 @@
     nav
       button.navbar-toggler: span.burger-icon
       ul.navbar-list
-        / li.active
-        /   = link_to 'Home', root_path, class: 'nav-link'
         li
-          = link_to 'Instagram', 'http://www.instagram.com/printingweekly/', target: '_blank', rel: 'nofollow', class: 'nav-link', class_active: 'nav-link--active'
-          
-        / li
-          = link_to 'Donate', 'https://donorbox.org/printingweekly/', target: '_blank', rel: 'nofollow', class: 'nav-link', class_active: 'nav-link--active'
+          = link_to  (image_tag 'instagram.png',  width: 35, height: 35), 'http://www.instagram.com/printingweekly/', target: '_blank', rel: 'nofollow', class: 'nav-link', class_active: 'nav-link--active'
+        li
+          = link_to (image_tag 'Digital-Patreon-Logo_Black.png',  width: 35, height: 35), 'https://www.patreon.com/printingweekly', target: '_blank', rel: 'nofollow', class: 'nav-link', class_active: 'nav-link--active'

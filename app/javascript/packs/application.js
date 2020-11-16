@@ -11,6 +11,7 @@ global.jQuery = jQuery
 require("packs/get_instagram_posts")
 require("packs/main")
 require("channels")
+require("jquery-lazy")
 
 
 import 'bootstrap'

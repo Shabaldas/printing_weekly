@@ -37,4 +37,5 @@ MetaTags.configure do |config|
   # config.property_tags.push(
   #   'x-hearthstone:deck',
   # )
+    # config.title
 end
