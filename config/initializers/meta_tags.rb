@@ -37,5 +37,8 @@ MetaTags.configure do |config|
   # config.property_tags.push(
   #   'x-hearthstone:deck',
   # )
-    # config.title
+  config.title_limit = 80
+  config.description_limit = 160
+  config.keywords_limit = 225
+  config.keywords_separator = ', '
 end

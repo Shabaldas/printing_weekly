@@ -26,7 +26,6 @@ $(document).on('ready turbolinks:load', function() {
       link.target = '_blank'
       link.href = (`https://www.instagram.com/p/${post.shortcode}`)
       image.classList.add('lazy')
-      // console.log((link.href).slice(-3))
       link.setAttribute('class', 'instagram-post col-md-4 col-6')
       link.appendChild(image)
       return link
