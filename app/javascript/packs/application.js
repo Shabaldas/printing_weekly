@@ -8,8 +8,8 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 global.$ = $
 global.jQuery = jQuery
-require("packs/get_instagram_posts")
-require("packs/main")
+    // require("packs/get_instagram_posts")
+    // require("packs/main")
 require("channels")
 require("jquery-lazy")
 
