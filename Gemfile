@@ -5,6 +5,8 @@ ruby '2.6.3'
 
 gem 'active_link_to'
 gem 'activeadmin'
+gem 'activeadmin_reorderable'
+gem 'mini_magick'
 gem 'devise'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
 gem 'pg', '>= 0.18', '< 2.0'
@@ -19,6 +21,7 @@ gem 'passenger'
 gem 'meta-tags'
 gem 'httparty'
 gem 'facebookbusiness'
+gem 'cancancan'
 # gem 'rest-client'
 
 group :development, :test do

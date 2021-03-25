@@ -9,7 +9,7 @@
         | Print out and take picture of the ready printed product and don't forget to tag&nbsp;
         b #printingweekly
         |.
-      li Weekly top 24 will be published on our instagram page
+      li Weekly top 12 will be published on our instagram page
       li Follow the news and vote for the best product.
 
 section.feed.container
@@ -19,7 +19,12 @@ section.feed.container
     | A platform for 3d printing community.
   p
     | Check out these fantastic submissions to our Monday Prompts:
-  / #instagram-posts.instagram-posts
+  #instagram-posts.instagram-posts
+
+
+  - @instaphotos.each do |photo|
+    = link_to photo.url do
+      = image_tag photo.image.variant(resize: '500x500'), class: 'nav-link', class_active: 'nav-link--active'
 <!-- Global site tag (gtag.js) - Google Analytics -->
 script[async src="https://www.googletagmanager.com/gtag/js?id=UA-177197692-1"]
 script
