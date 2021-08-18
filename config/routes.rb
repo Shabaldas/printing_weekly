@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
-  devise_for :users, ActiveAdmin::Devise.config
+  devise_for :users, controllers: {
+    registrations: 'users/registrations',
+    
+    # passwords: 'users/passwords',
+    # sessions: 'users/sessions',
+    # invitations: 'users/invitations'
+  }
+  ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
   root 'home#home'

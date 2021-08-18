@@ -9,6 +9,10 @@
         set_meta_tags title: 'Printing Weekly Challenge, platform for 3dprinting community, printingweekly, weekly, challenge, 3D, 3ддрук, 3дпечать, 3dprinting, ivanofrankivsk, ultimaker, ender, creality, abs, pla, pteg, pet, wanhao, formlabs'
       ul.navbar-list
         li
+          = link_to  (image_tag 'sign-in.png', width: 35, height: 35), edit_user_registration_path,  rel: 'nofollow', class: 'nav-link', class_active: 'nav-link--active'
+        li
           = link_to  (image_tag 'instagram.png',  width: 35, height: 35), 'http://www.instagram.com/printingweekly/', target: '_blank', rel: 'nofollow', class: 'nav-link', class_active: 'nav-link--active'
         li
           = link_to (image_tag 'Digital-Patreon-Logo_Black.png',  width: 35, height: 35), 'https://www.patreon.com/printingweekly', target: '_blank', rel: 'nofollow', class: 'nav-link', class_active: 'nav-link--active'
+        li 
+          = button_to "Sign Out", destroy_user_session_path, method: :delete

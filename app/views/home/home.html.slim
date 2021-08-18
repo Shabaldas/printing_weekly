@@ -1,6 +1,6 @@
 .header
   .header__inner.container
-    = image_tag "line.svg", class: 'header__illustration'
+    / = image_tag "line.svg", class: 'header__illustration'
     h1.hidden Printing Weekly Challenge
     div: h2.h1 Printing Weekly Challenge
     div: ul.header__list
@@ -19,12 +19,7 @@ section.feed.container
     | A platform for 3d printing community.
   p
     | Check out these fantastic submissions to our Monday Prompts:
-  #instagram-posts.instagram-posts
-
-
-  - @instaphotos.each do |photo|
-    = link_to photo.url do
-      = image_tag photo.image.variant(resize: '500x500'), class: 'nav-link', class_active: 'nav-link--active'
+  / #instagram-posts.instagram-posts
 <!-- Global site tag (gtag.js) - Google Analytics -->
 script[async src="https://www.googletagmanager.com/gtag/js?id=UA-177197692-1"]
 script
