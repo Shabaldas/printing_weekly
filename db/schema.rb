@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_25_125024) do
+ActiveRecord::Schema.define(version: 2021_08_18_184441) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,27 +36,55 @@ ActiveRecord::Schema.define(version: 2021_03_25_125024) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "blog_posts", force: :cascade do |t|
-    t.string "title"
-    t.string "subtitle"
-    t.integer "state", default: 0
-    t.text "content"
-    t.datetime "published_at"
+  create_table "challenge_members", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "challenge_id"
+    t.string "nick_name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["challenge_id"], name: "index_challenge_members_on_challenge_id"
+    t.index ["user_id"], name: "index_challenge_members_on_user_id"
   end
 
-  create_table "instaphotos", force: :cascade do |t|
-    t.string "url"
+  create_table "challenge_winners", force: :cascade do |t|
+    t.bigint "challenge_id"
+    t.bigint "challenge_member_id"
+    t.integer "place"
+    t.datetime "winning_date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["challenge_id"], name: "index_challenge_winners_on_challenge_id"
+    t.index ["challenge_member_id"], name: "index_challenge_winners_on_challenge_member_id"
+  end
+
+  create_table "challenges", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.integer "status"
+    t.string "link"
+    t.float "money_prize"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
+    t.string "first_name", default: "", null: false
+    t.string "last_name", default: "", null: false
+    t.string "nick_name"
+    t.string "phone_number"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.integer "role", default: 0, null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.string "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
