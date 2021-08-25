@@ -1,0 +1,5 @@
+= simple_form_for @challenge_member, remote: true, url: challenge_members_path do |f|
+  .form-group
+    = f.input :nick_name
+    / = f.email_field :email, autofocus: true, class: 'form-control'
+  = f.submit 'Submit', class: 'btn btn-primary'

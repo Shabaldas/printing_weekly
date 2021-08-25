@@ -12,7 +12,30 @@
       li Weekly top 12 will be published on our instagram page
       li Follow the news and vote for the best product.
 
-section.feed.container
+    table
+      thead
+        tr
+          - if @current_challenge.present?
+            th = link_to challenge_path(id: @current_challenge&.id)
+              h3
+                | Active Challenge
+              h5
+                = @current_challenge.title
+              h5
+                = @current_challenge.description
+    | Previous Challenges
+    table
+      h3
+      thead
+        - @previos_challenges.each do |challenge|
+          tr
+            th = link_to challenge_path(id: challenge.id)
+              h5
+                = challenge.title
+              h5
+                = challenge.description
+
+/ section.feed.container
   h3.h3
     | THE FEED:
   p

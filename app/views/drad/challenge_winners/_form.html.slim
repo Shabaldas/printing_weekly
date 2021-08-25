@@ -1,0 +1,19 @@
+= semantic_form_for [:drad, @challenge_winner], builder: ActiveAdmin::FormBuilder do |f|
+  = f.semantic_errors *f.object.errors.keys
+  = f.inputs do
+    = f.input :challenge_id,
+              as: :select,
+              collection: Challenge.all,
+              prompt: '-- Select Challenge --'
+    = f.input :challenge_member_id,
+              as: :select,
+              values: [],
+              collection: ChallengeMember.all.map { |u| ["#{u.nick_name}", u.id] },
+              prompt: '-- Select Challenge Member --'
+    = f.input :place,
+              as: :select,
+              collection: [*1..10],
+              prompt: '-- Select Place --'
+    = f.input :winning_date, as: :string, input_html: { class: 'datepicker' }
+
+    = f.actions

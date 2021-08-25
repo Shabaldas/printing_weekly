@@ -1,0 +1,12 @@
+= semantic_form_for [:drad, @challenge_member], builder: ActiveAdmin::FormBuilder do |f|
+  = f.semantic_errors *f.object.errors.keys
+  = f.inputs do
+    = f.input :nick_name
+    = f.input :challenge
+    = f.input :user,
+              as: :select,
+              values: [],
+              collection: User.all.map { |u| ["#{u.email}", u.id] },
+              prompt: '-- Select User --'
+
+    = f.actions

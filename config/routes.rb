@@ -10,8 +10,12 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   root 'home#home'
+  resources :challenges
+  resources :challenge_members
 
   get 'home', to: 'home#home'
+
+  
 
   # resources :blog_posts, only: %i[index show]
 end
