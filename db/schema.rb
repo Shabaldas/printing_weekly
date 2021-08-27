@@ -40,6 +40,8 @@ ActiveRecord::Schema.define(version: 2021_08_18_184441) do
     t.bigint "user_id"
     t.bigint "challenge_id"
     t.string "nick_name"
+    t.string "link_to_instagram"
+    t.integer "approve", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["challenge_id"], name: "index_challenge_members_on_challenge_id"
@@ -61,8 +63,11 @@ ActiveRecord::Schema.define(version: 2021_08_18_184441) do
     t.string "title"
     t.string "description"
     t.integer "status"
+    t.integer "members_count"
     t.string "link"
     t.float "money_prize"
+    t.integer "val"
+    t.integer "type_of_print"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

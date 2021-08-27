@@ -8,5 +8,7 @@
               values: [],
               collection: User.all.map { |u| ["#{u.email}", u.id] },
               prompt: '-- Select User --'
-
+    = f.input :uploads, as: :file, input_html: { multiple: true }
+    = f.input :approve
+    = f.input :link_to_instagram
     = f.actions

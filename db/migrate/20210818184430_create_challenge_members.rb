@@ -4,6 +4,8 @@ class CreateChallengeMembers < ActiveRecord::Migration[6.0]
       t.belongs_to :user
       t.belongs_to :challenge
       t.string :nick_name
+      t.string :link_to_instagram
+      t.integer :approve, default: 0
 
       t.timestamps
     end

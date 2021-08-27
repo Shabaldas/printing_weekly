@@ -6,6 +6,7 @@ ruby '2.6.3'
 gem 'active_link_to'
 gem 'activeadmin'
 gem 'activeadmin_reorderable'
+gem 'active_storage_validations'
 gem 'mini_magick'
 gem 'devise'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
@@ -29,6 +30,10 @@ gem 'simple_form'
 group :development, :test do
   gem 'awesome_print'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rubocop', require: false
+  gem 'rubocop-performance'
+  gem 'rubocop-rails'
+  gem 'rubocop-rspec'
 end
 
 group :production do

@@ -1,7 +1,6 @@
 | Challenge Members:
-
 - @challenge_members.each do |member|
   li
     = member.nick_name
-
+    
 = link_to 'Participate', new_challenge_member_path(challenge: @current_challenge) if @set_current_challange.status == 'current'

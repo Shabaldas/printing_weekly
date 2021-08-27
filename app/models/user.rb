@@ -1,5 +1,8 @@
 class User < ApplicationRecord
   has_one :challenge_member
+  has_one_attached :avatar do |attachable|
+    attachable.variant :thumb, resize: "100x100"
+  end
   
   devise :database_authenticatable, :registerable,
          :rememberable, :validatable

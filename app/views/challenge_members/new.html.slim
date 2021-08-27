@@ -1,5 +1,7 @@
 = simple_form_for @challenge_member, remote: true, url: challenge_members_path do |f|
   .form-group
+    - if @challenge_member.errors.any?
+      = pluralize(@challenge_member.errors.count, "error")
     = f.input :nick_name
-    / = f.email_field :email, autofocus: true, class: 'form-control'
+    = f.file_field :uploads, { multiple: true }
   = f.submit 'Submit', class: 'btn btn-primary'
