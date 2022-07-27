@@ -14,7 +14,6 @@ ActiveAdmin.register Instaphoto do
   end
 
   index as: :grid, default: true do |product|
-    ap product
     link_to image_tag(product.image.variant(resize: '100x100'))
     # , admin_product_path(product)
   end
