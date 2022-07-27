@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.3'
 
 gem 'active_link_to'
-# gem 'activeadmin'
+gem 'activeadmin'
 gem 'activeadmin_reorderable'
 gem 'mini_magick'
 gem 'devise'
