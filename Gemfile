@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.3'
 
 gem 'active_link_to'
-gem 'activeadmin'
+# gem 'activeadmin'
 gem 'activeadmin_reorderable'
 gem 'mini_magick'
 gem 'devise'
@@ -22,6 +22,7 @@ gem 'meta-tags'
 gem 'httparty'
 gem 'facebookbusiness'
 gem 'cancancan'
+gem 'mimemagic', github: 'mimemagicrb/mimemagic', ref: '01f92d86d15d85cfd0f20dabd025dcbd36a8a60f'
 # gem 'rest-client'
 
 group :development, :test do
